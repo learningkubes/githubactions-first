@@ -6,3 +6,9 @@ jobs:
     steps:
       - name: displaying hello
         run: echo "hello"
+  second-job:
+    needs: first-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: displaying bye
+        run: echo "bye"
