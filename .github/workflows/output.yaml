@@ -1,0 +1,9 @@
+name: github-context
+on: push
+jobs:
+  github-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: github context
+        run: toJSON(github)
+
