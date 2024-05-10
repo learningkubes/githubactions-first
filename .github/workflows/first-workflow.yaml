@@ -4,11 +4,13 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: displaying hello
-        run: echo "hello"
-  second-job:
-    needs: first-job
-    runs-on: ubuntu-latest
-    steps:
-      - name: displaying bye
-        run: echo "bye"
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: install nodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: test
+        run: npm test
