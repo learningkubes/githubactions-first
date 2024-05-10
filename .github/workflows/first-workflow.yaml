@@ -1,7 +1,7 @@
 name: first-workflow
 on: push
 jobs:
-  first-job:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
@@ -14,3 +14,9 @@ jobs:
         run: npm ci
       - name: test
         run: npm test
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploying the build
+        run: echo "deploying..."
