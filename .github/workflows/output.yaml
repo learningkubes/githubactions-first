@@ -6,5 +6,4 @@ jobs:
     steps:
       - name: github context
         #run: echo "${{ toJSON(github) }}"
-        run: echo github.ref
-
+        run: echo "${{ github.ref }}"
