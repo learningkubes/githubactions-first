@@ -1,9 +1,9 @@
-name: github-context
-on: push
-jobs:
-  github-context:
-    runs-on: ubuntu-latest
-    steps:
-      - name: github context
-        #run: echo "${{ toJSON(github) }}"
-        run: echo "${{ github.ref }}"
+# name: github-context
+# on: push
+# jobs:
+#   github-context:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: github context
+#         #run: echo "${{ toJSON(github) }}"
+#         run: echo "${{ github.ref }}"

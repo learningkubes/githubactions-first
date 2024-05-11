@@ -1,22 +1,21 @@
-# name: first-workflow
-# on: push
-# jobs:
-#   build-and-test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: checkout code
-#         uses: actions/checkout@v4
-#       - name: install nodeJS
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: 18
-#       - name: install dependencies
-#         run: npm ci
-#       - name: test
-#         run: npm test
-#   deploy:
-#     needs: build-and-test
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: deploying the build
-#         run: echo "deploying..."
+name: first-workflow
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: install nodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: test
+        run: npm test
