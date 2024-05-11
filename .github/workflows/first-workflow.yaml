@@ -1,10 +1,11 @@
 name: first-workflow
 on:
-  pull_request:
-    types:
-      - opened
+  push:
     branches:
       - main
+      - 'feature/**'
+    # paths-ignore:
+    #   - 'index.html'
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
