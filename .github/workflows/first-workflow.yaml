@@ -6,6 +6,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    outputs:
+      script-file: ${{ steps.publish.outputs.output }}
     steps:
       - name: checkout code
         uses: actions/checkout@v4
@@ -18,7 +20,7 @@ jobs:
       - name: building the code
         run: npm run build
       - name: printing filename
-        run: find dist/assets/*.js -type f -exec sh -c 'echo "{}"' \;
+        run: find dist/assets/*.js -type f -exec sh -c echo '::set-output name=output::{}' \;
       - name: uploading artifacts
         uses: actions/upload-artifact@v4
         with:
