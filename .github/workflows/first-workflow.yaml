@@ -22,3 +22,12 @@ jobs:
         with:
           name: dist-files
           path: dist
+  download-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: downloading artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-files
+      - name: displying artifacts
+        run: ls
