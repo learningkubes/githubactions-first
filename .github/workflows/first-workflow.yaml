@@ -24,6 +24,7 @@ jobs:
           path: dist
   download-artifacts:
     runs-on: ubuntu-latest
+    needs: build-and-test
     steps:
       - name: downloading artifacts
         uses: actions/download-artifact@v4
