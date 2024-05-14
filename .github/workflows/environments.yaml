@@ -3,15 +3,15 @@ on:
   push:
     branches:
       - main
-      - 'feature/**'
-env:
-  MONGODB_DATABASENAME: database
+      - staging
 jobs:
-  build:
+  stage:
+    environment: stage
     runs-on: ubuntu-latest
     env:
-      MONGODB_USERNAME: username
-      MONGODB_PASSWORD: password
+      MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      MONGODB_DATABASENAME: ${{ env.MONGODB_DATABSENAME }}
     steps:
       - name: displaying environment values
         run: |
