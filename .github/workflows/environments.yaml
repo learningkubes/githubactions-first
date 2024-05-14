@@ -9,7 +9,7 @@ jobs:
     environment: stage
     runs-on: ubuntu-latest
     steps:
-      - name: displaying environment values
+      - name: displaying environment values  
         run: |
           echo 'Username: ${{ vars.MONGODB_USERNAME }}'
           echo 'Password: ${{ secrets.MONGODB_PASSWORD }}'
