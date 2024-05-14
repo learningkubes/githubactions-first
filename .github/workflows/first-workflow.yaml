@@ -26,7 +26,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: run tests
+        id: test
         run: npm run test
+      - name: execute if previous steps fails
+        if: failure() && steps.test.outcome == 'failure'
+        run: echo "This step runs when previous step failed."
   deploy:
     if: failure()
     runs-on: ubuntu-latest
