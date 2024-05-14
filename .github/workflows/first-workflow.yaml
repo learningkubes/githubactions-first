@@ -25,6 +25,8 @@ jobs:
       - name: run tests
         id: test
         run: npm run test
+      - name: printing value
+        run: echo "fail"
       - name: execute if previous steps fails
         if: failure() #&& steps.test.outcome == 'failure'
         run: echo "This step runs when previous step failed."
