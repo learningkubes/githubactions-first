@@ -15,5 +15,6 @@ jobs:
     steps:
       - name: displaying environment values
         run: |
-          echo 'environment value: $MONGODB_USERNAME'
-          echo 'environment value of password: ${{ env.MONGODB_PASSWORD }}'
+          echo 'Username: ${{ env.MONGODB_USERNAME }}'
+          echo 'Password: ${{ env.MONGODB_PASSWORD }}'
+          echo 'Database: ${{ env.MONGODB_DATABASENAME }}'
