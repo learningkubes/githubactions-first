@@ -1,16 +1,18 @@
-name: workflow-environments
-on:
-  push:
-    branches:
-      - main
-      - staging
-jobs:
-  stage:
-    environment: stage
-    runs-on: ubuntu-latest
-    steps:
-      - name: displaying environment values  
-        run: |
-          echo 'Username: ${{ vars.MONGODB_USERNAME }}'
-          echo 'Password: ${{ secrets.MONGODB_PASSWORD }}'
-          echo 'Database: ${{ vars.MONGODB_DATABASENAME }}'
+# name: workflow-environments
+# on:
+#   push:
+#     branches:
+#       - main
+#       - staging
+# jobs:
+#   stage:
+#     permissions:
+#       issues: write
+#     environment: stage
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: displaying environment values  
+#         run: |
+#           echo 'Username: ${{ vars.MONGODB_USERNAME }}'
+#           echo 'Password: ${{ secrets.MONGODB_PASSWORD }}'
+#           echo 'Database: ${{ vars.MONGODB_DATABASENAME }}'
