@@ -9,9 +9,9 @@ jobs:
     environment: stage
     runs-on: ubuntu-latest
     env:
-      MONGODB_USERNAME: ${{ MONGODB_USERNAME }}
+      MONGODB_USERNAME: ${{ environments.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-      MONGODB_DATABASENAME: ${{ MONGODB_DATABSENAME }}
+      MONGODB_DATABASENAME: ${{ environments.MONGODB_DATABSENAME }}
     steps:
       - name: displaying environment values
         run: |
