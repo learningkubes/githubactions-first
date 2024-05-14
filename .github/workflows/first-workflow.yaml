@@ -5,8 +5,7 @@ on:
       - staging
 jobs:
   build-and-test:
-    permissions:
-      issues: write
+    permissions: {}
     outputs:
       username: ${{ steps.publish.outputs.username }}
     runs-on: ubuntu-latest
