@@ -10,12 +10,10 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
       - name: install nodeJS
+        id: node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: displaying output
-        id: publish
-        run: echo '::set-output name=username::Vijay'
       - name: cache
         id: cache
         uses: actions/cache@v4
@@ -29,7 +27,7 @@ jobs:
         id: test
         run: npm run test
       - name: execute if previous steps fails
-        if: failure() && steps.test.outcome == 'failure'
+        if: failure() && steps.node.outcome == 'failure'
         run: echo "This step runs when previous step failed."
   deploy:
     if: failure()
