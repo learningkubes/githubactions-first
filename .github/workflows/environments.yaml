@@ -6,7 +6,7 @@ on:
       - staging
 jobs:
   stage:
-    environment: stage
+    environment: staging
     runs-on: ubuntu-latest
     steps:
       - name: displaying environment values  
