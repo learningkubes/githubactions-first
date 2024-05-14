@@ -8,9 +8,13 @@ jobs:
   stage:
     environment: staging
     runs-on: ubuntu-latest
+    env:
+      MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      MONGODB_DATABASENAME: ${{ vars.MONGODB_DATABASENAME }}
     steps:
       - name: displaying environment values  
         run: |
-          echo 'Username: ${{ vars.MONGODB_USERNAME }}'
-          echo 'Password: ${{ secrets.MONGODB_PASSWORD }}'
-          echo 'Database: ${{ vars.MONGODB_DATABASENAME }}'
+          echo 'Username: ${{ env.MONGODB_USERNAME }}'
+          echo 'Password: ${{ env.MONGODB_PASSWORD }}'
+          echo 'Database: ${{ env.MONGODB_DATABASENAME }}'
