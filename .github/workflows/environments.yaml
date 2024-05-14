@@ -1,0 +1,19 @@
+name: workflow-environments
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+env:
+  MONGODB_DATABASENAME: database
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_USERNAME: username
+      MONGODB_PASSWORD: password
+    steps:
+      - name: displaying environment values
+        run: |
+          echo 'environment value $MONGODB_USERNAME'
+          echo 'environment value of password: ${{ env.MONGODB_PASSWORD }}'
