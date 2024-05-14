@@ -33,4 +33,4 @@ jobs:
     needs: build-and-test
     steps:
       - name: displaying output from build-and-test
-        run: echo 'Something is wrong'
+        run: echo 'Something is wrong  '
