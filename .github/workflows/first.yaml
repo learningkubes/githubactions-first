@@ -30,3 +30,8 @@ jobs:
         run: npm ci
       - name: building the Code
         run: npm run build
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploying workflow"
+        uses: ./.github/workflows/second-workflow.yaml
