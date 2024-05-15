@@ -22,5 +22,5 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/second-workflow.yaml
-    with:
-      name: ${{ github.workflow }}
+    # with:
+    #   name: ${{ github.workflow }}

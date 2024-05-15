@@ -5,7 +5,7 @@ on:
       name:
         description: name of the workflow calling this
         default: default
-        required: false
+        required: true
         type: string
 jobs:
   deploy:
