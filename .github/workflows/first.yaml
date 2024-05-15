@@ -21,6 +21,7 @@ jobs:
         run: npm run build
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: deploying workflow
         uses: ./.github/workflows/second-workflow.yaml
