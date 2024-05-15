@@ -10,10 +10,13 @@ on:
     outputs:
       output:
         description: name of the workflow
-        value: ${{ github.workflow }}
+        value: ${{ steps.result.outputs.result}}
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: deploying
         run: echo "deploying workflow by another workflow - ${{ inputs.name }}"
+      - name: output value
+        id: result
+        run: echo "::set-output name=result::Vijay"
