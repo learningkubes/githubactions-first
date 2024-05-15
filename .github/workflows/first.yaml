@@ -1,0 +1,21 @@
+name: first-workflow-matrix-strategy
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+      - staging
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout Code
+        uses: actions/checkout@v3
+      - name: install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 1.8
+      - name: install Dependencies
+        run: npm ci
+      - name: building the Code
+        run: npm run build
