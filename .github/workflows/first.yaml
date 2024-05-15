@@ -10,9 +10,11 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
+        node-version: 14
+        os: [windows-latest]
         exclude:
           - node-version: 14
-            os: [windows-latest, ubuntu-latest]
+            os: windows-latest
         include:
           - node-version: 18
             os: ubuntu-latest
