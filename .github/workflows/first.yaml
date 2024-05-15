@@ -20,4 +20,5 @@ jobs:
       - name: building the Code
         run: npm run build
   deploy:
+    needs: build
     uses: ./.github/workflows/second-workflow.yaml
