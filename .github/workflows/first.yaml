@@ -33,5 +33,5 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: deploying workflow"
+      - name: deploying workflow
         uses: ./.github/workflows/second-workflow.yaml

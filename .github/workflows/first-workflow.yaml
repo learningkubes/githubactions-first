@@ -2,7 +2,7 @@
 # on:
 #   push:
 #     branches:
-#       - staging
+#       - main
 # jobs:
 #   build-and-test:
 #     runs-on: ubuntu-latest
