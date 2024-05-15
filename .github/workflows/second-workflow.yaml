@@ -10,7 +10,6 @@ on:
     outputs:
       output:
         description: name of the workflow
-        type: string
         value: ${{ github.workflow }}
 jobs:
   deploy:
