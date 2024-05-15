@@ -24,16 +24,7 @@ jobs:
       - name: install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
-      - name: building the Code
-        run: npm run build
-  deploy:
-    needs: build
-    uses: ./.github/workflows/second-workflow.yaml
-    with:
-      name: ${{ github.workflow }}
-  testing-output:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: displaying output from another workflow
-        run: echo "${{ needs.deploy.outputs.output }}"
+      # - name: building the Code
+      #   run: npm run build
+      - name: displaying output
+        run: echo "cached successfully!!"
