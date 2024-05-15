@@ -10,7 +10,7 @@ on:
     outputs:
       output:
         description: name of the workflow
-        value: ${{ steps.result.outputs.result}}
+        value: ${{ jobs.deploy.outputs.result}}
 jobs:
   deploy:
     runs-on: ubuntu-latest
