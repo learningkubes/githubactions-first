@@ -7,25 +7,14 @@ on:
       - staging
 jobs:
   build:
-    continue-on-error: true
-    strategy:
-      matrix:
-        node-version: [14]
-        os: [windows-latest]
-        exclude:
-          - node-version: 14
-            os: windows-latest
-        include:
-          - node-version: 18
-            os: ubuntu-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: checkout Code
         uses: actions/checkout@v3
       - name: install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18
       - name: install Dependencies
         run: npm ci
       - name: building the Code
