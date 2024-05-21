@@ -1,4 +1,4 @@
-name: first-workflow-matrix-strategy
+name: custom-actions
 on:
   push:
     branches:
