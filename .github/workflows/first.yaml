@@ -15,15 +15,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: cache
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-      - name: install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+      - name: cache custom actions
+        uses: ./.github/custom-action/cached-deps
+      # - name: cache
+      #   id: cache
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      # - name: install Dependencies
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   run: npm ci
       # - name: building the Code
       #   run: npm run build
       - name: displaying output

@@ -1,0 +1,15 @@
+name: custom-actions
+description: 'Get the dependecies and cache them'
+runs:
+  using: 'composite'
+  steps:
+    - name: cache
+      id: cache
+      uses: actions/cache@v4
+      with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+    - name: install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash
